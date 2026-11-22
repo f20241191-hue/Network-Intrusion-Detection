@@ -1,0 +1,28 @@
+NETWORK INTRUSION DETECTION — MODEL RESULTS
+
+Model: Decision Tree Classifier
+
+Model Parameters:
+- Maximum depth: 10
+- Test size: 20%
+- Random state: 42
+- Stratified split: Yes
+
+Evaluation Metrics:
+- Accuracy: 0.9981089052131408
+- Precision: 0.99320824220099
+- Recall: 0.9988134170694296
+- F1-score: 0.9960029436804664
+
+Confusion Matrix:
+[[111687, 236],
+ [41, 34512]]
+
+Training Records: 585900
+Testing Records: 146476
+
+False Positives: 236
+False Negatives: 41
+
+Dataset: Combined processed CIC-IDS2017 CSV files
+Classification: Binary (Benign = 0, Attack = 1)
