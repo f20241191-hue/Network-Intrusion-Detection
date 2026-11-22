@@ -1,34 +1,57 @@
-Network Intrusion Detection - Baseline Results
-Dataset: CIC-IDS2017 processed CSV files
-Model: Decision Tree Classifier
-Maximum depth: 10
-Random state: 42
-Train/Test split: 80/20
-Stratification: Yes
+Network Intrusion Detection — Model Results
+Reported run — random seed: 91
 
-Accuracy: 0.9981089052131408
-Precision: 0.99320824220099
-Recall: 0.9988134170694296
-F1-score: 0.9960029436804664
+Model: Decision Tree (max_depth=10)
+Split: stratified 80% train / 20% test
+
+Accuracy: 0.9984092957208007 (99.8409%)
+Precision: 0.9941826978458703 (99.4183%)
+Recall: 0.9991028275403004 (99.9103%)
+F1-score: 0.9966366903878632 (99.6637%)
 
 Confusion Matrix:
-[[111687, 236],
- [41, 34512]]
+[[111721    202]
+ [    31  34522]]
 
-Training records: 585900
-Testing records: 146476
+TN = 111,721
+FP = 202
+FN = 31
+TP = 34,522
+
+Training records: 585,900
+Testing records: 146,476
 
 Training class distribution:
-Benign (0): 447688
-Attack (1): 138212
+Label 0 (Benign): 447,688
+Label 1 (Attack): 138,212
 
 Testing class distribution:
-Benign (0): 111923
-Attack (1): 34553
+Label 0 (Benign): 111,923
+Label 1 (Attack): 34,553
 
-False positives: 236
-False negatives: 41
+Error analysis:
+False negatives: 31
+False positives: 202
 
-Failure case observation:
-29 of 41 false-negative records had destination port 80.
-This is an observed pattern, not a proven cause.
+Missed attack destination-port counts:
+Port 80: 22
+Port 0: 3
+Port 21: 3
+Port 22: 3
+
+Forward packet count among missed attacks:
+Count: 31
+Mean: 8.354839
+Median: 3
+Minimum: 1
+Maximum: 150
+
+Example missed record:
+Destination Port: 80
+Total Fwd Packets: 3
+Total Backward Packets: 1
+All reported packet-length and SYN/ACK/RST flag-count features: 0
+Actual: Attack (1)
+Predicted: Benign (0)
+
+Note: Transcribed from reported outputs. Verify this is the seed-91 run before treating as final.
