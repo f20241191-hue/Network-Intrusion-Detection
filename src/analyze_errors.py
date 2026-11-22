@@ -13,11 +13,11 @@ x = data.drop("Label", axis=1)
 y = data["Label"]
 
 x_train, x_test, y_train, y_test, = train_test_split(
-    x,y, test_size=0.20, random_state=42, stratify=y
+    x,y, test_size=0.20, random_state=91, stratify=y
 )
 
 model = DecisionTreeClassifier(
-    max_depth=10, random_state=42
+    max_depth=10, random_state=91
 )
 model.fit(x_train, y_train)
 y_pred = model.predict(x_test)
